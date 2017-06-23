@@ -112,6 +112,10 @@ fun main(args: Array<String>) {
             }
 
             fun Tree<T>.procSubtree(t0: Vector2, t1: Vector2) {
+                val max = min(t1.x, t1.y)
+                if (max < 0)
+                    return
+
                 val tm = (t0 + t1) / 2.0
 
                 if (this is Tree.Node) {
