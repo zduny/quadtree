@@ -116,6 +116,9 @@ var Quadtree = function (_, Kotlin) {
   function main$intersect$procSubtree(closure$visitor, closure$firstNode, closure$a, closure$newNode) {
     return function closure$procSubtree($receiver, t0, t1) {
       var tmp$;
+      var max = Math.min(t1.x, t1.y);
+      if (max < 0)
+        return;
       var tm = t0.plus_xliypu$(t1).div_14dthe$(2.0);
       if (Kotlin.isType($receiver, Tree$Node)) {
         closure$visitor($receiver);
