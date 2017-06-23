@@ -168,11 +168,11 @@ fun main(args: Array<String>) {
         val ray = Segment2(point1, point2).toRay()
 
         tree.clearTree()
-        var a = 0.1
+        var a = 1.0
         val intersection = tree.intersect(middle, 512.0, ray) {
             if (it.isLeaf)
                 it.value.value = a
-            a += 0.01
+            a -= 0.01
         }
 
         val (t0, t1) = intersection

@@ -185,7 +185,7 @@ var Quadtree = function (_, Kotlin) {
     return function (it) {
       if (it.isLeaf)
         it.value.value = closure$a.v;
-      closure$a.v += 0.01;
+      closure$a.v -= 0.01;
     };
   }
   function main$draw_0(closure$c, closure$canvas, closure$point1, closure$point2, closure$tree, closure$clearTree, closure$middle, closure$intersect, closure$draw) {
@@ -193,7 +193,7 @@ var Quadtree = function (_, Kotlin) {
       closure$c.clearRect(0.0, 0.0, closure$canvas.width, closure$canvas.height);
       var ray = toRay(new Segment2(closure$point1.v, closure$point2.v));
       closure$clearTree(closure$tree);
-      var a = {v: 0.1};
+      var a = {v: 1.0};
       var intersection = closure$intersect(closure$tree, closure$middle.v, 512.0, ray, main$draw$lambda(a));
       var tmp$ = intersection;
       var t0 = tmp$.component1()
